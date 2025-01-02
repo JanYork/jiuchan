@@ -104,7 +104,7 @@ body::before {
   }
 }
 
-.data-container {
+.container {
   position: absolute;
   top: 10%;
   left: 50%;
@@ -119,12 +119,17 @@ body::before {
   animation: blink 2s infinite;
 }
 
-.data-container h2 {
+.content h2 {
   font-size: 24px;
   margin-bottom: 10px;
 }
 
-.data-container p {
+.animation_steps h2{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.content p {
   font-size: 16px;
   margin: 5px 0;
 }
@@ -139,4 +144,12 @@ body::before {
   100% {
     opacity: 0;
   }
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }

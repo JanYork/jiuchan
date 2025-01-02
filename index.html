@@ -40,36 +40,51 @@
     </div>
   </div>
 
-  <div class="data-container">
-    <h2 id="data-name"></h2>
-    <p id="data-email"></p>
-    <p id="data-blog"></p>
-    <p id="data-subscribe"></p>
-    <p id="data-signature"></p>
+  <div class="container">
+    <div id="content" class="hide">
+      <h2 id="content-name"></h2>
+      <p id="content-email"></p>
+      <p id="content-blog"></p>
+      <p id="content-subscribe"></p>
+      <p id="content-signature"></p>
+    </div>
+
+    <div class="animation_steps">
+      <h2 id="step1" class="hide">正在尝试抓捕春秋蝉...</h2>
+      <h2 id="step2" class="hide">正在尝试开启空间裂缝...</h2>
+    </div>
   </div>
 
   <script>
+    function jump(url) {
+      window.location.href = `https://${url}`;
+    };
+
+    const start = (url) => {
+      document.getElementById('step1').classList.remove('hide');
+      setTimeout(() => {
+        document.getElementById('step1').classList.add('hide');
+        document.getElementById('step2').classList.remove('hide');
+        setTimeout(() => {
+          document.getElementById('step2').classList.add('hide');
+          document.getElementById('content').classList.remove('hide');
+          setTimeout(() => {
+            jump(url);
+          }, 2000);
+        }, 2000);
+      }, 2000);
+    };
+
     fetch('./db.json')
       .then(response => response.json())
       .then(data => {
+        document.getElementById('step1').classList.remove('hide');
         const randomItem = data[Math.floor(Math.random() * data.length)];
-        document.getElementById('data-name').textContent = `前往：${randomItem.name}` || '未提供名称';
-        // document.getElementById('data-email').textContent = `邮箱: ${randomItem.email || '未提供邮箱'}`;
-        // document.getElementById('data-blog').textContent = `博客: ${randomItem.blog || '未提供博客'}`;
-        // document.getElementById('data-subscribe').textContent = `订阅: ${randomItem.subscribe || '未提供订阅链接'}`;
-        document.getElementById('data-signature').textContent = `${randomItem.signature || '未提供签名'}`;
+        document.getElementById('content-name').textContent = `前往：${randomItem.name}` || '未提供名称';
+        document.getElementById('content-signature').textContent = `${randomItem.signature || '未提供签名'}`;
 
-        setTimeout(() => {
-          jump(randomItem.blog);
-        }, 3500);
-      })
-      .catch(error => {
-        alert('数据加载失败');
+        start(randomItem.blog);
       });
-
-      function jump(url) {
-        window.location.href = `https://${url}`;
-      }
   </script>
 </body>
 
