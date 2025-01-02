@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>揪蝉-为个人独立网站建立网络连接</title>
+  <meta name="description" content="揪蝉是一个为个人独立网站建立网络连接的项目，通过揪蝉，你可以发现更多有趣的个人独立网站。">
+  <meta name="keywords" content="揪蝉, 网站接力, 个人独立网站, 网络连接, 网站导航, 网站推荐">
+  <meta name="author" content="揪蝉">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <meta name="google-site-verification" content="your-google-site-verification-code">
+  <meta name="baidu-site-verification" content="your-baidu-site-verification-code">
+  <meta name="msvalidate.01" content="your-msvalidate-01-code">
+  <meta name="yandex-verification" content="your-yandex-verification-code">
+  <meta name="alexaVerifyID" content="your-alexa-verify-id">
+  <meta name="p:domain_verify" content="your-domain-verify-code">
+  <meta name="yandex-verification" content="your-yandex-verification-code">
+  <meta name="google-site-verification" content="your-google-site-verification-code">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="scene">
+    <div class="wrap">
+      <div class="wall wall-right"></div>
+      <div class="wall wall-left"></div>
+      <div class="wall wall-top"></div>
+      <div class="wall wall-bottom"></div>
+      <div class="wall wall-back"></div>
+    </div>
+    <div class="wrap">
+      <div class="wall wall-right"></div>
+      <div class="wall wall-left"></div>
+      <div class="wall wall-top"></div>
+      <div class="wall wall-bottom"></div>
+      <div class="wall wall-back"></div>
+    </div>
+  </div>
+
+  <div class="data-container">
+    <h2 id="data-name"></h2>
+    <p id="data-email"></p>
+    <p id="data-blog"></p>
+    <p id="data-subscribe"></p>
+    <p id="data-signature"></p>
+  </div>
+
+  <script>
+    fetch('./db.json')
+      .then(response => response.json())
+      .then(data => {
+        const randomItem = data[Math.floor(Math.random() * data.length)];
+        document.getElementById('data-name').textContent = `前往：${randomItem.name}` || '未提供名称';
+        // document.getElementById('data-email').textContent = `邮箱: ${randomItem.email || '未提供邮箱'}`;
+        // document.getElementById('data-blog').textContent = `博客: ${randomItem.blog || '未提供博客'}`;
+        // document.getElementById('data-subscribe').textContent = `订阅: ${randomItem.subscribe || '未提供订阅链接'}`;
+        document.getElementById('data-signature').textContent = `${randomItem.signature || '未提供签名'}`;
+
+        setTimeout(() => {
+          jump(randomItem.blog);
+        }, 3500);
+      })
+      .catch(error => {
+        alert('数据加载失败');
+      });
+
+      function jump(url) {
+        window.location.href = `https://${url}`;
+      }
+  </script>
+</body>
+
+</html>

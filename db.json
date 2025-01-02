@@ -1,0 +1,45 @@
+[
+    {
+        "name": "简纸",
+        "email": "hi@ixor.me",
+        "blog": "paper.ixor.me",
+        "subscribe": "paper.ixor.me/feed.xml",
+        "signature": "关于我的生活和思考"
+    },
+    {
+        "name": "小张同学",
+        "email": "admin@xztx.fun",
+        "blog": "blog.xiaozhangstu.com",
+        "subscribe": "blog.xiaozhangstu.com/xml",
+        "signature": "小张从无到有的逆袭人生"
+    },
+    {
+        "name": "小染笔记",
+        "email": "1345561377@qq.com",
+        "blog": "onoe.cn",
+        "subscribe": "https://onoe.cn/feed",
+        "signature": "不必借光而行，你我皆是星辰"
+    },
+    {
+        "name": "青桔气球",
+        "blog": "blog.qjqq.cn",
+        "signature": "源于热爱而去创造"
+    },
+    {
+        "name": "小简博客",
+        "email": "hi@ixor.me",
+        "blog": "blog.ixor.me",
+        "subscribe": "https://blog.ixor.me/feed",
+        "signature": "槐花院落闲散的人"
+    },
+    {
+        "name": "小孙同学",
+        "blog": "blog.sunguoqi.com",
+        "signature": "路虽远行则将至，事虽难做则必成"
+    },
+    {
+        "name": "Heo",
+        "blog": "blog.zhheo.com",
+        "signature": "分享设计与科技生活"
+    }
+]
