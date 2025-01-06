@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>揪蝉-为个人独立网站建立网络连接</title>
-  <meta name="description" content="揪蝉是一个为个人独立网站建立网络连接的项目，通过揪蝉，你可以发现更多有趣的个人独立网站。">
+  <title>揪蝉-为个人独立网站建立网络流量连接</title>
+  <meta name="description" content="揪蝉是一个为个人独立网站建立网络流量连接的项目，通过揪蝉，你可以发现更多有趣的个人独立网站。">
   <meta name="keywords" content="揪蝉, 网站接力, 个人独立网站, 网络连接, 网站导航, 网站推荐">
   <meta name="author" content="揪蝉">
   <meta name="robots" content="index, follow">
@@ -51,14 +51,14 @@
 
     <div class="animation_steps">
       <h2 id="step1" class="hide">正在尝试抓捕春秋蝉...</h2>
-      <h2 id="step2" class="hide">正在尝试开启空间裂缝...</h2>
+      <h2 id="step2" class="hide">正在从空间裂缝穿梭...</h2>
     </div>
   </div>
 
   <script>
     function jump(url) {
       window.location.href = `https://${url}`;
-    };
+    }
 
     const start = (url) => {
       document.getElementById('step1').classList.remove('hide');
@@ -69,7 +69,7 @@
           document.getElementById('step2').classList.add('hide');
           document.getElementById('content').classList.remove('hide');
           setTimeout(() => {
-            jump(url);
+            // jump(url);
           }, 2000);
         }, 2000);
       }, 2000);
@@ -80,7 +80,7 @@
       .then(data => {
         document.getElementById('step1').classList.remove('hide');
         const randomItem = data[Math.floor(Math.random() * data.length)];
-        document.getElementById('content-name').textContent = `前往：${randomItem.name}` || '未提供名称';
+        document.getElementById('content-name').textContent = `即将到达 → “${randomItem.name}”` || '未提供名称';
         document.getElementById('content-signature').textContent = `${randomItem.signature || '未提供签名'}`;
 
         start(randomItem.blog);
