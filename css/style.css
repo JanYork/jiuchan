@@ -119,6 +119,10 @@ body::before {
   animation: blink 2s infinite;
 }
 
+.container #content-signature {
+  margin-bottom: 10px;
+}
+
 .content h2 {
   font-size: 1rem;
   margin-bottom: 10px;
