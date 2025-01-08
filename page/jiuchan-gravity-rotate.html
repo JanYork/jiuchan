@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>揪蝉-为个人独立网站建立网络流量连接</title>
+    <meta name="description" content="揪蝉是一个为个人独立网站建立网络流量连接的项目，通过揪蝉，你可以发现更多有趣的个人独立网站。">
+    <meta name="keywords" content="揪蝉, 网站接力, 个人独立网站, 网络连接, 网站导航, 网站推荐">
+    <meta name="author" content="揪蝉">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google-site-verification" content="your-google-site-verification-code">
+    <meta name="baidu-site-verification" content="your-baidu-site-verification-code">
+    <meta name="msvalidate.01" content="your-msvalidate-01-code">
+    <meta name="yandex-verification" content="your-yandex-verification-code">
+    <meta name="alexaVerifyID" content="your-alexa-verify-id">
+    <meta name="p:domain_verify" content="your-domain-verify-code">
+    <meta name="yandex-verification" content="your-yandex-verification-code">
+    <meta name="google-site-verification" content="your-google-site-verification-code">
+
+    <link rel="stylesheet" href="../css/gravity-rotate/style.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+
+    <div id="gravity-rotate">
+        <canvas></canvas>
+    </div>
+
+    <div class="container">
+        <div id="content" class="hide">
+            <h2 id="content-name"></h2>
+            <p id="content-email"></p>
+            <p id="content-blog"></p>
+            <p id="content-subscribe"></p>
+            <p id="content-signature"></p>
+        </div>
+
+        <div class="animation_steps">
+            <h2 id="step1" class="hide">正在尝试抓捕春秋蝉...</h2>
+            <h2 id="step2" class="hide">正在从空间裂缝穿梭...</h2>
+        </div>
+    </div>
+
+    <script src='../js/gravity-rotate/zrveeq.js'></script>
+    <script src="../js/gravity-rotate/index.js"></script>
+
+    <script>
+        function jump(url) {
+            window.location.href = `https://${url}`;
+        }
+
+        const start = (url) => {
+            document.getElementById('step1').classList.remove('hide');
+            setTimeout(() => {
+                document.getElementById('step1').classList.add('hide');
+                document.getElementById('step2').classList.remove('hide');
+                setTimeout(() => {
+                    document.getElementById('step2').classList.add('hide');
+                    document.getElementById('content').classList.remove('hide');
+                    setTimeout(() => {
+                        jump(url);
+                    }, 2000);
+                }, 2000);
+            }, 2000);
+        };
+
+        fetch('../db.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('step1').classList.remove('hide');
+                const randomItem = data[Math.floor(Math.random() * data.length)];
+                document.getElementById('content-name').textContent = `即将到达 → “${randomItem.name}”` || '未提供名称';
+                document.getElementById('content-signature').textContent = `${randomItem.signature || '未提供签名'}`;
+
+                start(randomItem.blog);
+            });
+    </script>
+</body>
+
+</html>

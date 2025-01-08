@@ -18,74 +18,20 @@
   <meta name="p:domain_verify" content="your-domain-verify-code">
   <meta name="yandex-verification" content="your-yandex-verification-code">
   <meta name="google-site-verification" content="your-google-site-verification-code">
-
-  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <div class="scene">
-    <div class="wrap">
-      <div class="wall wall-right"></div>
-      <div class="wall wall-left"></div>
-      <div class="wall wall-top"></div>
-      <div class="wall wall-bottom"></div>
-      <div class="wall wall-back"></div>
-    </div>
-    <div class="wrap">
-      <div class="wall wall-right"></div>
-      <div class="wall wall-left"></div>
-      <div class="wall wall-top"></div>
-      <div class="wall wall-bottom"></div>
-      <div class="wall wall-back"></div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div id="content" class="hide">
-      <h2 id="content-name"></h2>
-      <p id="content-email"></p>
-      <p id="content-blog"></p>
-      <p id="content-subscribe"></p>
-      <p id="content-signature"></p>
-    </div>
-
-    <div class="animation_steps">
-      <h2 id="step1" class="hide">正在尝试抓捕春秋蝉...</h2>
-      <h2 id="step2" class="hide">正在从空间裂缝穿梭...</h2>
-    </div>
-  </div>
-
   <script>
-    function jump(url) {
-      window.location.href = `https://${url}`;
-    }
-
-    const start = (url) => {
-      document.getElementById('step1').classList.remove('hide');
-      setTimeout(() => {
-        document.getElementById('step1').classList.add('hide');
-        document.getElementById('step2').classList.remove('hide');
-        setTimeout(() => {
-          document.getElementById('step2').classList.add('hide');
-          document.getElementById('content').classList.remove('hide');
-          setTimeout(() => {
-            jump(url);
-          }, 2000);
-        }, 2000);
-      }, 2000);
+    const router = {
+      '1': '/page/jiuchan-space.html',
+      '2': '/page/jiuchan-firework.html',
+      '3': '/page/jiuchan-gravity-rotate.html',
+      '4': '/page/jiuchan-time-travel.html',
+      '5': '/page/jiuchan-tunnel.html',
     };
-
-    fetch('./db.json')
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('step1').classList.remove('hide');
-        const randomItem = data[Math.floor(Math.random() * data.length)];
-        document.getElementById('content-name').textContent = `即将到达 → “${randomItem.name}”` || '未提供名称';
-        document.getElementById('content-signature').textContent = `${randomItem.signature || '未提供签名'}`;
-
-        start(randomItem.blog);
-      });
+    const num = Math.floor(Math.random() * 5) + 1;
+    window.location.href = router[num];
   </script>
 </body>
-
+</head>
 </html>

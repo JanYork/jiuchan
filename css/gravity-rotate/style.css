@@ -1,0 +1,9 @@
+canvas {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  touch-action: none;
+  width: 100%;
+  z-index: -1;
+}
