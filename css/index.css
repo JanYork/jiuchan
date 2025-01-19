@@ -4,6 +4,30 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    transition: 0.3s;
+}
+
+.footer-content {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 999;
+
+}
+
 .container {
     position: absolute;
     top: 10%;
