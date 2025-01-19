@@ -20,14 +20,14 @@ a:hover {
 .footer-content {
     position: fixed;
     bottom: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
     color: white;
     text-align: center;
     padding: 10px 0;
     z-index: 999;
-
+    margin: 0 auto;
 }
-
 .container {
     position: absolute;
     top: 10%;
