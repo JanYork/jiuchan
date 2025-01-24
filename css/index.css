@@ -30,6 +30,7 @@ a:hover {
     font-family: Arial, sans-serif;
     size: 0.6rem;
 }
+
 .container {
     position: absolute;
     top: 10%;
@@ -49,19 +50,26 @@ a:hover {
     margin-bottom: 10px;
 }
 
-.content h2 {
-    font-size: 0.8rem;
-    margin-bottom: 10px;
+.content #content-name {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
 }
 
 .animation_steps h2 {
-    font-size: 0.8rem;
-    margin-bottom: 10px;
+    font-size: 1rem;
+    margin: 1rem 0;
 }
 
 .content p {
-    font-size: 0.5rem;
-    margin: 5px 0;
+    font-size: 0.8rem;
+    margin: 1rem 0;
+}
+
+#content-decorate {
+    font-size: 0.8rem;
+    margin: 1rem 0;
 }
 
 @keyframes blink {
@@ -132,5 +140,40 @@ html {
 
     100% {
         width: 0;
+    }
+}
+
+
+.animation_steps .element {
+    opacity: 0;
+    animation: fadeInOut 2s forwards;
+}
+
+/* 第一个元素 */
+.animation_steps .step1 {
+    animation-delay: 0s; /* 第一个元素立即开始 */
+}
+
+/* 第二个元素 */
+.animation_steps .step2 {
+    animation-delay: 2s; /* 第二个元素延迟2秒开始 */
+}
+
+/* 第三个元素 */
+.animation_steps .step3 {
+    animation: blink 2s infinite;
+    animation-delay: 4s; /* 第三个元素延迟4秒开始 */
+}
+
+/* 动画关键帧 */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0; /* 动画开始时不可见 */
+    }
+    50% { /* 元素显示 */
+        opacity: 1;
+    }
+    100% { /* 元素消失 */
+        opacity: 0;
     }
 }

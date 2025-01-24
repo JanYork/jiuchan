@@ -44,8 +44,9 @@
         </div>
     </div>
 
-    <div class="container">
-        <div id="content" class="hide">
+    <div class="container animation_steps">
+        <div id="content" class="content element step3">
+            <p id="content-decorate">即将抵达</p>
             <h2 id="content-name"></h2>
             <p id="content-email"></p>
             <p id="content-blog"></p>
@@ -54,8 +55,8 @@
         </div>
 
         <div class="animation_steps">
-            <h2 id="step1" class="hide">正在尝试抓捕春秋蝉...</h2>
-            <h2 id="step2" class="hide">正在从空间裂缝穿梭...</h2>
+            <h2 id="step1" class="element step1">正在尝试抓捕春秋蝉...</h2>
+            <h2 id="step2" class="element step2">正在从空间裂缝穿梭...</h2>
         </div>
     </div>
 
@@ -65,26 +66,17 @@
         }
 
         const start = (url) => {
-            document.getElementById('step1').classList.remove('hide');
             setTimeout(() => {
-                document.getElementById('step1').classList.add('hide');
-                document.getElementById('step2').classList.remove('hide');
-                setTimeout(() => {
-                    document.getElementById('step2').classList.add('hide');
-                    document.getElementById('content').classList.remove('hide');
-                    setTimeout(() => {
-                        jump(url);
-                    }, 2000);
-                }, 2000);
-            }, 2000);
+                jump(url);
+            }, 6000);
         };
 
         randomWebsite().then(data => {
             document.getElementById('step1').classList.remove('hide');
-            document.getElementById('content-name').textContent = `即将到达 → “${data.name}”` || '未提供名称';
+            document.getElementById('content-name').textContent = `< ${data.name} >`;
 
             if (data.signature) {
-                document.getElementById('content-signature').textContent = `${data.signature}`;
+                document.getElementById('content-signature').textContent = `${data.signature ? " “ " +data.signature + " “ " : ''}`;
             } else {
                 document.getElementById('content-signature').style.display = 'none';
             }
