@@ -1,57 +1,62 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>揪蝉-加入揪蝉</title>
-        <meta name="description" content="揪蝉是一个为个人独立网站建立网络流量连接的项目，通过揪蝉，你可以发现更多有趣的个人独立网站。">
-        <meta name="keywords" content="揪蝉, 网站接力, 个人独立网站, 网络连接, 网站导航, 网站推荐">
-        <meta name="author" content="揪蝉">
-        <meta name="robots" content="index, follow">
-        <meta name="googlebot" content="index, follow">
-        <meta name="google-site-verification" content="your-google-site-verification-code">
-        <meta name="baidu-site-verification" content="your-baidu-site-verification-code">
-        <meta name="msvalidate.01" content="your-msvalidate-01-code">
-        <meta name="yandex-verification" content="your-yandex-verification-code">
-        <meta name="alexaVerifyID" content="your-alexa-verify-id">
-        <meta name="p:domain_verify" content="your-domain-verify-code">
-        <meta name="yandex-verification" content="your-yandex-verification-code">
-        <meta name="google-site-verification" content="your-google-site-verification-code">
-        <style>
-            .container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-            }
 
-            .container .box {
-                display: flex;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>揪蝉-加入揪蝉</title>
+    <meta name="description" content="揪蝉是一个为个人独立网站建立网络流量连接的项目，通过揪蝉，你可以发现更多有趣的个人独立网站。">
+    <meta name="keywords" content="揪蝉, 网站接力, 个人独立网站, 网络连接, 网站导航, 网站推荐">
+    <meta name="author" content="揪蝉">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google-site-verification" content="your-google-site-verification-code">
+    <meta name="baidu-site-verification" content="your-baidu-site-verification-code">
+    <meta name="msvalidate.01" content="your-msvalidate-01-code">
+    <meta name="yandex-verification" content="your-yandex-verification-code">
+    <meta name="alexaVerifyID" content="your-alexa-verify-id">
+    <meta name="p:domain_verify" content="your-domain-verify-code">
+    <meta name="yandex-verification" content="your-yandex-verification-code">
+    <meta name="google-site-verification" content="your-google-site-verification-code">
+
+    <link rel="stylesheet" href="../css/index.css">
+    <style>
+        .qr_code_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .qr_code_container .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .qr_code_container img {
+            width: 15rem;
+            margin: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
                 flex-direction: column;
-                align-items: center;
             }
 
             .container img {
-                width: 15rem;
-                margin: 0 2rem;
+                width: 10rem;
+                margin: 1rem 0;
             }
+        }
+    </style>
+</head>
 
-            @media (max-width: 768px) {
-                .container {
-                    flex-direction: column;
-                }
-
-                .container img {
-                    width: 10rem;
-                    margin: 1rem 0;
-                }
-            }
-
-        </style>
-    </head>
+<span id="animated_left_masks"></span>
+<span id="animated_right_masks"></span>
 
 <body>
-    <div class="container">
+    <div class="qr_code_container">
         <div class="box">
             <h3>关注微信公众号</h3>
             <img src="../img/wx-mp.jpg" alt="揪蝉微信公众号">
@@ -62,4 +67,13 @@
         </div>
     </div>
 </body>
+
+<footer>
+    <div class="footer-content" style="color: black;">
+        <p>
+            <span>© 2025 湖北择星 & 武汉极致 All Rights Reserved.</span> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://docs.jiuchan.org">关于</a> |  <a href="https://docs.jiuchan.org">联系</a> | <a href="https://docs.jiuchan.org/join.html">加入</a> | <a href="/page/jiuchan-wx.html">支持</a>
+        </p>
+    </div>
+</footer>
 </html>

@@ -27,6 +27,8 @@ a:hover {
     padding: 10px 0;
     z-index: 999;
     margin: 0 auto;
+    font-family: Arial, sans-serif;
+    size: 0.6rem;
 }
 .container {
     position: absolute;
@@ -48,17 +50,17 @@ a:hover {
 }
 
 .content h2 {
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-bottom: 10px;
 }
 
 .animation_steps h2 {
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-bottom: 10px;
 }
 
 .content p {
-    font-size: 0.6rem;
+    font-size: 0.5rem;
     margin: 5px 0;
 }
 
@@ -76,10 +78,59 @@ a:hover {
     }
 }
 
+html {
+    background-color: #f5f5f5;
+}
+
 .hide {
     display: none;
 }
 
 .show {
     display: block;
+}
+
+
+#animated_left_masks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(255, 255, 255);
+    z-index: 1;
+    animation: animated_left_masks 3s;
+    animation-fill-mode: forwards;
+}
+
+#animated_right_masks {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(255, 255, 255);
+    z-index: 1;
+    animation: animated_right_masks 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animated_left_masks {
+    0% {
+        width: 50%;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes animated_right_masks {
+    0% {
+        width: 50%;
+    }
+
+    100% {
+        width: 0;
+    }
 }
