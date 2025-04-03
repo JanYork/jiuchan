@@ -1,6 +1,6 @@
 const URL = 'https://api.jiuchan.org/website/random';
 
-randomWebsite = async () => {
+const randomWebsite = async () => {
     // {
     //     "status": 200,
     //     "eid": null,
@@ -21,11 +21,6 @@ randomWebsite = async () => {
 
     const response = await fetch(URL);
     const json = await response.json();
-    if (!json.ok) {
-        location.reload();
-    }
 
-    const website = json.body;
-    
-    return website;
+    return json.body;
 }

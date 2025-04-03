@@ -2,11 +2,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 0.8rem;
 }
 
 a {
     text-decoration: none;
-    color: inherit;
+    transition: 0.3s;
+}
+
+a:hover {
+    text-decoration: none;    
+    cursor: pointer;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    transition: 0.3s;
 }
 
 a:hover {
@@ -15,20 +24,6 @@ a:hover {
     color: #fff;
     border-bottom: 1px solid #fff;
     transition: 0.3s;
-}
-
-.footer-content {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    z-index: 999;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-    size: 0.6rem;
 }
 
 .container {
@@ -174,5 +169,87 @@ html {
     }
     100% { /* 元素消失 */
         opacity: 0;
+    }
+}
+
+.footer-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    border-top: 1px solid #eee;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+.footer-content a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin: 0 0.8rem;
+}
+
+.footer-content a:hover {
+    color: #333;
+}
+
+.footer-content img {
+    height: 15px;
+    vertical-align: middle;
+    margin-left: 5px;
+    transition: opacity 0.3s ease;
+}
+
+.footer-content img:hover {
+    opacity: 0.8;
+}
+
+.support-mobile {
+    display: none;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 0.8rem 0;
+    }
+    
+    .footer-content {
+        font-size: 0.8em;
+        padding: 0 15px;
+    }
+    
+    .footer-content a {
+        margin: 0 0.5rem;
+    }
+    
+    .footer-content span:first-child {
+        display: block;
+        margin-bottom: 0.3rem;
+    }
+
+    .support-mobile {
+        display: block;
+    }
+
+    .support-pc {
+        display: none;
     }
 }

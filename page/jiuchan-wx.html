@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>揪蝉-加入揪蝉</title>
-    <meta name="description" content="揪蝉是一个为个人独立网站建立网络流量连接的项目，通过揪蝉，你可以发现更多有趣的个人独立网站。">
-    <meta name="keywords" content="揪蝉, 网站接力, 个人独立网站, 网络连接, 网站导航, 网站推荐">
+    <title>揪蝉-提交您的个人网页，加入揪蝉</title>
+    <meta name="description" content="揪蝉，为个人独立网站建立访问流量连接的项目，通过揪蝉发现更多有趣的个人独立网站。">
+    <meta name="keywords" content="揪蝉, 网站接力, 个人独立网站, 网络连接, 流量接力">
     <meta name="author" content="揪蝉">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
@@ -20,34 +20,34 @@
     <meta name="google-site-verification" content="your-google-site-verification-code">
 
     <link rel="stylesheet" href="../css/index.css">
+
     <style>
-        .qr_code_container {
+        .about-jiuchan {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            padding: 1rem;
+            align-content: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 100%;
         }
 
-        .qr_code_container .box {
+        .box {
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 0.5rem;
         }
 
-        .qr_code_container img {
+        .box img {
             width: 15rem;
             margin: 0 2rem;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-
-            .container img {
-                width: 10rem;
-                margin: 1rem 0;
-            }
+            border-radius: 5%;
+            margin: 0.5rem;
         }
     </style>
 </head>
@@ -56,7 +56,7 @@
 <span id="animated_right_masks"></span>
 
 <body>
-    <div class="qr_code_container">
+    <div class="about-jiuchan">
         <div class="box">
             <h3>关注微信公众号</h3>
             <img src="../img/wx-mp.jpg" alt="揪蝉微信公众号">
@@ -66,14 +66,34 @@
             <img src="../img/wx-mini.jpg" alt="揪蝉微信小程序">
         </div>
     </div>
+
+    <div id="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <p class="support-pc">
+                    <span>© 2025 湖北择星 & 武汉极致 All Rights Reserved.</span>
+                    &nbsp;|&nbsp;
+                    <span>
+                        由<a href="https://chuqiyun.com" style="font-weight: 500; color: #1366EC;">©️ 初七云</a>提供云服务支持.
+                    </span>
+                </p>
+
+                <div class="support-mobile">
+                    <span>© 2025 湖北择星 & 武汉极致 All Rights Reserved.</span>
+                    <span>
+                        由<a href="https://chuqiyun.com" style="font-weight: 500; color: #1366EC;">©️ 初七云</a>提供云服务支持.
+                    </span>
+                </div>
+
+                <p>
+                    <a href="https://docs.jiuchan.org">关于</a>
+                    <a href="https://docs.jiuchan.org">联系</a>
+                    <a href="https://docs.jiuchan.org/join.html">加入</a>
+                    <a href="/page/jiuchan-wx.html">支持</a>
+                </p>
+            </div>
+        </div>
+    </div>
 </body>
 
-<footer>
-    <div class="footer-content" style="color: black;">
-        <p>
-            <span>© 2025 湖北择星 & 武汉极致 All Rights Reserved.</span> &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://docs.jiuchan.org">关于</a> |  <a href="https://docs.jiuchan.org">联系</a> | <a href="https://docs.jiuchan.org/join.html">加入</a> | <a href="/page/jiuchan-wx.html">支持</a>
-        </p>
-    </div>
-</footer>
 </html>

@@ -65,7 +65,7 @@
             document.getElementById('content-name').textContent = `< ${data.name} >`;
 
             if (data.signature) {
-                document.getElementById('content-signature').textContent = `${data.signature ? " “ " +data.signature + " “ " : ''}`;
+                document.getElementById('content-signature').textContent = `${data.signature ? " “ " + data.signature + " “ " : ''}`;
             } else {
                 document.getElementById('content-signature').style.display = 'none';
             }
@@ -75,13 +75,34 @@
             start(url);
         });
     </script>
-</body>
-<footer>
-    <div class="footer-content">
-        <p>
-            <span>© 2025 湖北择星 & 武汉极致 All Rights Reserved.</span> &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://docs.jiuchan.org">关于</a> |  <a href="https://docs.jiuchan.org">联系</a> | <a href="https://docs.jiuchan.org/join.html">加入</a> | <a href="/page/jiuchan-wx.html">支持</a>
-        </p>
+
+    <div id="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <p class="support-pc">
+                    <span>© 2025 湖北择星 & 武汉极致 All Rights Reserved.</span>
+                    &nbsp;|&nbsp;
+                    <span>
+                        由<a href="https://chuqiyun.com" style="font-weight: 500; color: #1366EC;">©️ 初七云</a>提供云服务支持.
+                    </span>
+                </p>
+
+                <div class="support-mobile">
+                    <span>© 2025 湖北择星 & 武汉极致 All Rights Reserved.</span>
+                    <span>
+                        由<a href="https://chuqiyun.com" style="font-weight: 500; color: #1366EC;">©️ 初七云</a>提供云服务支持.
+                    </span>
+                </div>
+
+                <p>
+                    <a href="https://docs.jiuchan.org">关于</a>
+                    <a href="https://docs.jiuchan.org">联系</a>
+                    <a href="https://docs.jiuchan.org/join.html">加入</a>
+                    <a href="/page/jiuchan-wx.html">支持</a>
+                </p>
+            </div>
+        </div>
     </div>
-</footer>
+</body>
+
 </html>
