@@ -18,8 +18,22 @@ const randomWebsite = async () => {
     //         "policeICP": null
     //     }
     // }
-    const response = await fetch(URL);
-    const json = await response.json();
-
-    return json.body;
+    try {
+        const response = await fetch(URL);
+        if (!response.ok) {
+            throw new Error('请求失败：' + response.status);
+        }
+        const json = await response.json();
+        return json.body;
+    } catch (error) {
+        console.error(error);
+        window.toast.showToast({
+            header: '访问异常',
+            message: '请尝试刷新重试，如果问题依旧，请前往联系我们。',
+            delay: 5000,
+            callback: () => {
+                window.location.href = 'mailto:hi@jiuchan.org';
+            }
+        })
+    }
 }
