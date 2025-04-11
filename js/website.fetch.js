@@ -18,7 +18,6 @@ const randomWebsite = async () => {
     //         "policeICP": null
     //     }
     // }
-
     const response = await fetch(URL);
     const json = await response.json();
 

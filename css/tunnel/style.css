@@ -1,3 +1,9 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
 body {
   display: -webkit-box;
   display: flex;
@@ -12,7 +18,7 @@ body {
   overflow: hidden;
 }
 
-.container1 {
+.container {
   position: fixed;
   top: 50%;
   left: 50%;
